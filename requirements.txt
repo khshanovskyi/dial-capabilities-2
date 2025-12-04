@@ -1,0 +1,10 @@
+aidial-sdk>=0.29.0
+aidial-client>=0.3.0
+aidial-interceptors-sdk>=0.6.0
+google-cloud-dlp==3.30.0
+spacy==3.7.5
+pillow==10.4.0
+aiostream==0.6.2
+numpy==1.26.4
+langfuse==2.60.2
+protobuf==5.29.5
