@@ -556,8 +556,4 @@ We integrate DIAL Chat into other applications with C[hat Overlay](https://docs.
 
 ---
 
-## 6.
-
----
-
 ## DON'T FORGET TO DELETE API KEYS BEFORE PUSH
