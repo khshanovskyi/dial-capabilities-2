@@ -222,7 +222,6 @@ LLM registered in DIAL Core acting as the orchestrator. Publishing a Quick App p
     ```
     ![-](screenshots/qa-ts-8.png)
     ![-](screenshots/qa-ts-9.png)
-    ![-](screenshots/qa-ts-10.png)
 
 </details>
 
