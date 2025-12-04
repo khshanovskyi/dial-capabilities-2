@@ -15,7 +15,7 @@
 
 
 - [1. Add Agent](#1-Add-Agent)
-- [2. Add Agent](#2-QuickApps--MCP-toolsets)
+- [2. Agent with QuickApps and MCP Toolsets](#2-QuickApps--MCP-toolsets)
   - [2.1 Agent sample with QuickApps](#21-Agent-sample-with-QuickApps)
   - [2.2 QuickApps Agent with several toolsets (GitHub, Notion)](#22-QuickApps-Agent-with-several-toolsets-GitHub-Notion)
 - [3. Interceptors](#3-Interceptors)
@@ -24,7 +24,7 @@
   - [3.3 Statistics Reporter](#33-Statistics-Reporter)
   - [3.4 Image watermark](#34-Image-watermark)
   - [3.5 PII Anonymizer](#35-PII-Anonymizer)
-- [3. Custom Themes](#4-Custom-Themes)
+- [4. Custom Themes](#4-Custom-Themes)
 - [5. Chat Overlay](#5-Chat-Overlay)
 
 ---
@@ -283,7 +283,7 @@ Let's try to add our first simple interceptor that will create a stage with gree
 1. Add to [core/config.json](core/config.json) to **interceptors** section:
     ```
         "chat-pre-post-interceptor": {
-          "endpoint": "http://host.docker.internal:5041/openai/deployments/pre-post-interceptorchat/completions"
+          "endpoint": "http://host.docker.internal:5041/openai/deployments/pre-post-interceptor/chat/completions"
         }
     ```
 2. Add this `"chat-in-out-interceptor"` to the `essay-assistant-gpt` application in `interceptors` array:
