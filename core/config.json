@@ -1,20 +1,6 @@
 {
   "interceptors": {
-    "chat-pre-post-interceptor": {
-      "endpoint": "http://host.docker.internal:5041/openai/deployments/pre-post-interceptor/chat/completions"
-    },
-    "chat-reply-as-pirate": {
-      "endpoint": "http://host.docker.internal:5042/openai/deployments/reply-as-pirate/chat/completions"
-    },
-    "chat-statistics-reporter": {
-      "endpoint": "http://host.docker.internal:5043/openai/deployments/statistics-reporter/chat/completions"
-    },
-    "chat-image-watermark": {
-      "endpoint": "http://host.docker.internal:5044/openai/deployments/image-watermark/chat/completions"
-    },
-    "chat-pii-anonymizer": {
-      "endpoint": "http://host.docker.internal:5045/openai/deployments/pii-anonymizer/chat/completions"
-    }
+
   },
   "applications": {
     "essay-assistant-gpt": {
@@ -24,10 +10,7 @@
       "endpoint": "http://host.docker.internal:5025/openai/deployments/essay-assistant-gpt/chat/completions",
       "features": {
         "configurationEndpoint": "http://host.docker.internal:5025/openai/deployments/essay-assistant-gpt/configuration"
-      },
-      "interceptors": [
-        "chat-pre-post-interceptor"
-      ]
+      }
     },
     "essay-assistant-sonnet": {
       "displayName": "Essay Assistant",
@@ -37,15 +20,6 @@
       "features": {
         "configurationEndpoint": "http://host.docker.internal:5026/openai/deployments/essay-assistant-sonnet/configuration"
       }
-    },
-    "agent-sample": {
-      "name": "agent-sample",
-      "endpoint": "http://host.docker.internal:5030/openai/deployments/agent-sample/chat/completions",
-      "display_name": "Agent Sample",
-      "description": "Simple Agent, that generates Essays and Pictures, and provides final output converted to speech",
-      "interceptors": [
-        "chat-pii-anonymizer"
-      ]
     }
   },
   "models": {
@@ -60,23 +34,6 @@
           "endpoint": "https://api.openai.com/v1/chat/completions",
           "key": "${OPENAI_API_KEY}"
         }
-      ]
-    },
-    "gpt-4o-pirate": {
-      "displayName": "GPT 4o Pirate",
-      "overrideName": "gpt-4o",
-      "endpoint": "http://adapter-dial-openai:5000/openai/deployments/gpt-4o/chat/completions",
-      "iconUrl": "http://localhost:3001/gpt4.svg",
-      "type": "chat",
-      "upstreams": [
-        {
-          "endpoint": "https://api.openai.com/v1/chat/completions",
-          "key": "${OPENAI_API_KEY}"
-        }
-      ],
-      "interceptors": [
-        "chat-reply-as-pirate",
-        "chat-statistics-reporter"
       ]
     },
     "claude-sonnet-4": {
