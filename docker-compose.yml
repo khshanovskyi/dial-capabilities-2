@@ -1,7 +1,7 @@
 services:
   themes:
     image: epam/ai-dial-chat-themes:development
-    platform: linux/amd64
+#    platform: linux/amd64
     ports:
       - "3001:8080"
     volumes:
@@ -11,7 +11,7 @@ services:
     ports:
       - "3000:3000"
     image: epam/ai-dial-chat:development
-    platform: linux/amd64
+#    platform: linux/amd64
     depends_on:
       - themes
       - core
@@ -28,7 +28,7 @@ services:
 
   redis:
     image: redis:7.2.4-alpine3.19
-    platform: linux/amd64
+#    platform: linux/amd64
     restart: always
     ports:
       - "6379:6379"
@@ -46,7 +46,7 @@ services:
     ports:
       - "8080:8080"
     image: epam/ai-dial-core:development
-    platform: linux/amd64
+#    platform: linux/amd64
     environment:
       'AIDIAL_SETTINGS': '/opt/settings/settings.json'
       'JAVA_OPTS': '-Dgflog.config=/opt/settings/gflog.xml'
@@ -65,7 +65,7 @@ services:
 
   adapter-dial-openai:
     image: epam/ai-dial-adapter-openai:development
-    platform: linux/amd64
+#    platform: linux/amd64
     environment:
       DALLE3_DEPLOYMENTS: dall-e-3
       DIAL_URL: "http://core:8080"
@@ -73,15 +73,8 @@ services:
 
   adapter-dial-bedrock:
     image: epam/ai-dial-adapter-bedrock:development
-    platform: linux/amd64
+#    platform: linux/amd64
     environment:
       COMPATIBILITY_MAPPING: '{"claude-sonnet-4-20250514": "anthropic.claude-sonnet-4-20250514-v1:0"}'
-      DIAL_URL: "http://core:8080"
-      LOG_LEVEL: "DEBUG"
-
-  adapter-dial-vertexai:
-    image: epam/ai-dial-adapter-vertexai:development
-    platform: linux/amd64
-    environment:
       DIAL_URL: "http://core:8080"
       LOG_LEVEL: "DEBUG"
