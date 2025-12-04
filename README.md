@@ -283,7 +283,7 @@ Let's try to add our first simple interceptor that will create a stage with gree
 1. Add to [core/config.json](core/config.json) to **interceptors** section:
     ```
         "chat-pre-post-interceptor": {
-          "endpoint": "http://host.docker.internal:5041/openai/deployments/pre-post-interceptorchat/completions"
+          "endpoint": "http://host.docker.internal:5041/openai/deployments/pre-post-interceptor/chat/completions"
         }
     ```
 2. Add this `"chat-in-out-interceptor"` to the `essay-assistant-gpt` application in `interceptors` array:
