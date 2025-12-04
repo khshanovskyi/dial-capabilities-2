@@ -14,8 +14,6 @@ services:
       - themes
       - core
     environment:
-      IS_IFRAME: true
-      ALLOWED_IFRAME_ORIGINS: http://localhost:5173/
       NEXTAUTH_SECRET: "secret"
       DEFAULT_MODEL: "gpt-4o"
       THEMES_CONFIG_HOST: "http://themes:8080"
