@@ -43,7 +43,7 @@ All the tools are the DIAL Deployment tools, we will take a look how with the on
     ```
         "agent-sample": {
           "displayName": "Agent Sample",
-          "description": "Simple Agent, that is able to make RAG, generate Essays and Pictures, and provides final output converted to speech",
+          "description": "Simple Agent, that is able to generate Essays and Pictures, and provides final output converted to speech",
           "endpoint": "http://host.docker.internal:5030/openai/deployments/agent-sample/chat/completions"
         }
     ```
